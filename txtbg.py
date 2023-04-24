@@ -44,6 +44,21 @@ current_player, red, black = choose_starting_player()
 current_dice = order_dice_throw(red, black)
 
 
+def print_board():  # this is it!
+    for i in range(13, 19):
+        print(f"{i:<3}|", end="")
+    print("<||||>", end="")
+    for i in range(19, 25):
+        print(f"{i:<3}|", end="")
+    print("")
+    for i in range(13, 19):
+        print(f"{board[i]:<3}|", end="")
+    print("<||||>", end="")
+    for i in range(19, 25):
+        print(f"{board[i]:<3}|", end="")
+    print("")
+
+
 def print_board():
     for key, value in board.items():
         if type(key) == int:
