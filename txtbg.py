@@ -42,3 +42,39 @@ current_player, red, black = choose_starting_player()
 
 # order the initial throw (values in red and black):
 current_dice = order_dice_throw(red, black)
+
+
+def print_board():
+    for key, value in board.items():
+        if type(key) == int:
+            if key <= 24 and key >= 19:
+                print(str(key) + " | ")
+                print("---")
+                print(value + " | ")
+            if key <= 18 and key >= 13:
+                print(str(key) + " | ")
+                print("---")
+                print(value + " | ")
+            if key == 25:
+                print("HOME")
+                print("---")
+                print(value)
+    print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
+    print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
+    print("~~~~~~~~~~~~~ BAR: " + board["bar"] + "~~~~~~~~")
+    print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
+    print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
+    for key, value in board.items():
+        if type(key) == int:
+            if key <= 12 and key >= 7:
+                print(str(key) + " | ")
+                print("---")
+                print(value + " | ")
+            if key <= 6 and key <= 1:
+                print(str(key) + " | ")
+                print("---")
+                print(value + " | ")
+            if key == 0:
+                print("HOME")
+                print("---")
+                print(value)
