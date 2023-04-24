@@ -47,14 +47,20 @@ current_dice = order_dice_throw(red, black)
 def print_board():
     for key, value in board.items():
         if type(key) == int:
-            if key <= 24 and key >= 19:
+            if key >= 13 and key <= 18:
                 print(str(key) + " | ")
                 print("---")
-                print(value + " | ")
-            if key <= 18 and key >= 13:
+                if value != "":
+                    print(value + " | ", end="")
+                else:
+                    print("<>", end="")
+            if key >= 19 and key <= 24:
                 print(str(key) + " | ")
                 print("---")
-                print(value + " | ")
+                if value != "":
+                    print(value + " | ", end="")
+                else:
+                    print("<>", end="")
             if key == 25:
                 print("HOME")
                 print("---")
@@ -69,11 +75,17 @@ def print_board():
             if key <= 12 and key >= 7:
                 print(str(key) + " | ")
                 print("---")
-                print(value + " | ")
+                if value != "":
+                    print(value + " | ", end="")
+                else:
+                    print("<>", end="")
             if key <= 6 and key <= 1:
                 print(str(key) + " | ")
                 print("---")
-                print(value + " | ")
+                if value != "":
+                    print(value + " | ", end="")
+                else:
+                    print("<>", end="")
             if key == 0:
                 print("HOME")
                 print("---")
