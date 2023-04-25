@@ -16,6 +16,8 @@ board[17] = "R3"
 board[8] = "B3"
 board[12] = "R5"
 board[13] = "B5"
+board[0] = 0
+board[25] = 0
 
 
 def throw_dice(first_throw=False):
@@ -86,3 +88,20 @@ def print_board():
     print("<||||>", end="")
     for i in range(6, 0, -1):
         print(f"{board[i]:<3}|", end="")
+
+
+# INITIATE GAME
+turn = 0
+double_state = 1
+default_double_answer = "n"
+double_answer = ""
+while int(board[25]) < 15 and int(board[0] < 15):
+    print(f"Turn #{turn}")
+    print(f"Double: {double_state}")
+    print_board()
+    print("\n")
+    double_answer = input("Do you want to double? y or [n]: ") or "n"
+    if not double_answer or double_answer == "n":
+        double_state = double_state
+    if double_answer == "y":
+        double_state = double_state * 2
